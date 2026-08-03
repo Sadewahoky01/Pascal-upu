@@ -1,0 +1,1239 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAPALA PASCAL UPU - Official Portal & Outdoor Shop</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           1. CORE & COLOR PALETTE (ELEGAN)
+           ========================================== */
+        :root {
+            --primary: #0a231c;       /* Deep Emerald */
+            --primary-light: #163d32;
+            --accent: #d4af37;        /* Gold Accent */
+            --accent-hover: #b59226;
+            --shopee: #ee4d2d;        /* Shopee Orange */
+            --shopee-hover: #d03e21;
+            --bg-light: #f8faf9;
+            --surface: #ffffff;
+            --text-main: #1c2421;
+            --text-muted: #62726d;
+            --border: #e2e8e5;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-soft: 0 10px 30px rgba(10, 35, 28, 0.05);
+            --shadow-hover: 0 20px 40px rgba(10, 35, 28, 0.12);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* ==========================================
+           2. NAVIGATION (GLASSMORPHISM)
+           ========================================== */
+        header {
+            background: rgba(10, 35, 28, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--surface);
+            padding: 1.2rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--surface);
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero {
+            background: linear-gradient(180deg, rgba(10, 35, 28, 0.7) 0%, rgba(10, 35, 28, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--surface);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: var(--primary);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* ==========================================
+           4. LAYOUT & SECTION HEADERS
+           ========================================== */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ==========================================
+           5. DIVISI (CARDS ELEGAN)
+           ========================================== */
+        .divisi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .divisi-card {
+            background: var(--surface);
+            padding: 35px 25px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .divisi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .divisi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+
+        .divisi-card:hover::before {
+            opacity: 1;
+        }
+
+        .divisi-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 35, 28, 0.05);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .divisi-card:hover .divisi-icon {
+            background: var(--primary);
+            color: var(--accent);
+        }
+
+        .divisi-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .divisi-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           6. DAFTAR ANGGOTA (TABEL DENGAN FOTO)
+           ========================================== */
+        .angkatan-card {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            margin-bottom: 35px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .angkatan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .angkatan-header h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .angkatan-header h3 i {
+            color: var(--accent);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        table th {
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            background: #f4f7f5;
+            border-radius: 6px;
+        }
+
+        table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        table tbody tr {
+            transition: var(--transition);
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Styling Foto Profil Anggota */
+        .member-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .member-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .badge-rimba {
+            background: rgba(10, 35, 28, 0.08);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(10, 35, 28, 0.15);
+            display: inline-block;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-pengurus {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            border: 1px solid #bbdefb;
+        }
+
+        .status-alumni {
+            background-color: #f3e5f5;
+            color: #4a148c;
+            border: 1px solid #e1bee7;
+        }
+
+        .status-aktif {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            border: 1px solid #c8e6c9;
+        }
+
+        /* ==========================================
+           7. DOKUMENTASI (GALERI MASONRY)
+           ========================================== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 35, 28, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text h4 {
+            color: var(--surface);
+            font-size: 1.1rem;
+        }
+
+        .gallery-text p {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================
+           8. RENTAL SHOP & CART
+           ========================================== */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .shop-card {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .shop-img-wrapper {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .shop-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .shop-card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .shop-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .shop-price {
+            color: var(--accent-hover);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .shop-actions {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn-add-cart {
+            background: rgba(10, 35, 28, 0.05);
+            color: var(--primary);
+            border: 1px solid rgba(10, 35, 28, 0.1);
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--primary);
+            color: var(--surface);
+        }
+
+        .btn-shopee {
+            background: var(--shopee);
+            color: var(--surface);
+            text-decoration: none;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-shopee:hover {
+            background: var(--shopee-hover);
+            color: var(--surface);
+        }
+
+        /* Cart Floating Layout */
+        .cart-summary {
+            background: var(--primary);
+            color: var(--surface);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px rgba(10, 35, 28, 0.2);
+        }
+
+        .cart-summary h3 {
+            color: var(--surface);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        #cartList {
+            list-style: none;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #cartList li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .remove-btn {
+            color: #ff6b6b;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .cart-total-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* ==========================================
+           9. PAB & FORM PENDAFTARAN
+           ========================================== */
+        .pab-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+        }
+
+        .pab-info {
+            background: var(--primary);
+            color: var(--surface);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pab-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .pab-info ul {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .pab-info ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .pab-info ul li i {
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .form-container {
+            padding: 50px 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            background: var(--bg-light);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--surface);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: var(--surface);
+            padding: 14px 20px;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-light);
+            box-shadow: 0 10px 20px rgba(10, 35, 28, 0.15);
+        }
+
+        /* ==========================================
+           10. FOOTER
+           ========================================== */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .pab-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-mountain-sun"></i>
+            PASCAL UPU
+        </div>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#divisi">Divisi</a>
+            <a href="#anggota">Anggota</a>
+            <a href="#dokumentasi">Galeri</a>
+            <a href="#shop">Gear Shop</a>
+            <a href="#pab">PAB</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <span class="hero-badge">Mahasiswa Pencinta Alam</span>
+        <h1>Tabah, Tangguh, &amp; Lestari</h1>
+        <p>Wadah pembinaan karakter, eksplorasi alam bebas, dan konservasi lingkungan Universitas Potensi Utama.</p>
+        <a href="#pab" class="btn-gold">
+            <i class="fa-solid fa-compass"></i> Bergabung Sekarang
+        </a>
+    </section>
+
+    <div class="container">
+
+        <!-- DIVISI OPERASIONAL -->
+        <section id="divisi">
+            <div class="section-header">
+                <span class="section-subtitle">Spesialisasi</span>
+                <h2 class="section-title">Divisi Operasional</h2>
+            </div>
+            <div class="divisi-grid">
+                <div class="divisi-card">
+                    <div class="divisi-icon"><i class="fa-solid fa-person-hiking"></i></div>
+                    <h3>Mountaineering</h3>
+                    <p>Navigasi darat, manajemen perjalanan, dan penjelajahan gunung hutan.</p>
+                </div>
+                <div class="divisi-card">
+                    <div class="divisi-icon"><i class="fa-solid fa-mountain"></i></div>
+                    <h3>Rock Climbing</h3>
+                    <p>Teknik panjat tebing buatan maupun alam serta keahlian tali-temali.</p>
+                </div>
+                <div class="divisi-card">
+                    <div class="divisi-icon"><i class="fa-solid fa-route"></i></div>
+                    <h3>Caving</h3>
+                    <p>Eksplorasi penelusuran gua, pemetaan sistem gua, dan konservasi speleologi.</p>
+                </div>
+                <div class="divisi-card">
+                    <div class="divisi-icon"><i class="fa-solid fa-water"></i></div>
+                    <h3>ORAD (Arung Jeram)</h3>
+                    <p>Olahraga arus deras, pengarungan sungai, dan penyelamatan di air.</p>
+                </div>
+                <div class="divisi-card">
+                    <div class="divisi-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Lingkungan Hidup</h3>
+                    <p>Konservasi sumber daya alam, reboisasi, dan edukasi ekologi lingkungan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DAFTAR ANGGOTA BY ANGKATAN -->
+        <section id="anggota" style="margin-top: 100px;">
+            <div class="section-header">
+                <span class="section-subtitle">Persaudaraan &amp; Silsilah</span>
+                <h2 class="section-title">Daftar Anggota Mapala PASCAL UPU</h2>
+            </div>
+
+            <!-- ANGKATAN I (PENDIRI) -->
+            <div class="angkatan-card">
+                <div class="angkatan-header">
+                    <h3><i class="fa-solid fa-tree"></i> Angkatan I — Pendiri (PIONEER)</h3>
+                    <span class="badge-rimba" style="background: var(--accent); color: var(--primary);">Tahun 2021</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>NTA</th>
+                                <th>Nama Lengkap</th>
+                                <th>Nama Rimba</th>
+                                <th>Program Studi</th>
+                                <th>Status / Jabatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>PASCAL-01.001</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Foto Ahmad Ridwan" class="member-avatar">
+                                        <span>Ahmad Ridwan, S.Kom.</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Elang</span></td>
+                                <td>Teknik Informatika</td>
+                                <td><span class="status-badge status-alumni">Dewan Penasehat</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>PASCAL-01.002</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Foto Siti Rahmawati" class="member-avatar">
+                                        <span>Siti Rahmawati, S.Tr.Kom.</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Cendana</span></td>
+                                <td>Sistem Informasi</td>
+                                <td><span class="status-badge status-alumni">Alumni / Pendiri</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>PASCAL-01.003</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Foto Rizky Pratama" class="member-avatar">
+                                        <span>Rizky Pratama, S.Kom.</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Beringin</span></td>
+                                <td>Rekayasa Perangkat Lunak</td>
+                                <td><span class="status-badge status-alumni">Alumni / Pendiri</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ANGKATAN II (PINTIS) -->
+            <div class="angkatan-card">
+                <div class="angkatan-header">
+                    <h3><i class="fa-solid fa-mountain"></i> Angkatan II — Pintis (PENJELAJAH)</h3>
+                    <span class="badge-rimba" style="background: var(--accent); color: var(--primary);">Tahun 2023</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>NTA</th>
+                                <th>Nama Lengkap</th>
+                                <th>Nama Rimba</th>
+                                <th>Program Studi</th>
+                                <th>Status / Jabatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>PASCAL-02.004</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Foto Budi Santoso" class="member-avatar">
+                                        <span>Budi Santoso</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Harimau</span></td>
+                                <td>Teknik Informatika</td>
+                                <td><span class="status-badge status-pengurus">Ketua Umum</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>PASCAL-02.005</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Foto Dewi Lestari" class="member-avatar">
+                                        <span>Dewi Lestari</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Melati</span></td>
+                                <td>Sistem Informasi</td>
+                                <td><span class="status-badge status-pengurus">Sekretaris Umum</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>PASCAL-02.006</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=200&q=80" alt="Foto Hendra Wijaya" class="member-avatar">
+                                        <span>Hendra Wijaya</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Rajawali</span></td>
+                                <td>Teknik Industri</td>
+                                <td><span class="status-badge status-pengurus">Bendahara Umum</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ANGKATAN III (RIMBA UTAMA) -->
+            <div class="angkatan-card">
+                <div class="angkatan-header">
+                    <h3><i class="fa-solid fa-compass"></i> Angkatan III — Rimba Utama</h3>
+                    <span class="badge-rimba" style="background: var(--accent); color: var(--primary);">Tahun 2025</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>NTA</th>
+                                <th>Nama Lengkap</th>
+                                <th>Nama Rimba</th>
+                                <th>Program Studi</th>
+                                <th>Status / Jabatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>PASCAL-03.007</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" alt="Foto Fajar Ramadhan" class="member-avatar">
+                                        <span>Fajar Ramadhan</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Giesom</span></td>
+                                <td>Teknik Informatika</td>
+                                <td><span class="status-badge status-aktif">Kadiv Mountaineering</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>PASCAL-03.008</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Foto Indah Permata" class="member-avatar">
+                                        <span>Indah Permata</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Cemara</span></td>
+                                <td>Manajemen Informatika</td>
+                                <td><span class="status-badge status-aktif">Kadiv Caving</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>PASCAL-03.009</strong></td>
+                                <td>
+                                    <div class="member-profile">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Foto Giri Saputra" class="member-avatar">
+                                        <span>Giri Saputra</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge-rimba">Kera Hitam</span></td>
+                                <td>Teknik Informatika</td>
+                                <td><span class="status-badge status-aktif">Anggota Aktif</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOKUMENTASI KEGIATAN -->
+        <section id="dokumentasi" style="margin-top: 100px;">
+            <div class="section-header">
+                <span class="section-subtitle">Galeri Aksi</span>
+                <h2 class="section-title">Dokumentasi Kegiatan</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80" alt="Pendakian">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Ekspedisi Gunung Leuser</h4>
+                            <p>Divisi Mountaineering</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80" alt="Panjat Tebing">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Latihan Rock Climbing</h4>
+                            <p>Divisi Rock Climbing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=600&q=80" alt="Arung Jeram">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Pengarungan Sungai Bingei</h4>
+                            <p>Divisi ORAD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Aksi Lingkungan">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Penanaman Mangrove</h4>
+                            <p>Divisi Lingkungan Hidup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RENTAL & SHOPEE SHOP -->
+        <section id="shop" style="margin-top: 100px;">
+            <div class="section-header">
+                <span class="section-subtitle">Peralatan Standar</span>
+                <h2 class="section-title">Outdoor Gear Rental &amp; Store</h2>
+            </div>
+
+            <div class="shop-grid">
+                <!-- Item 1 -->
+                <div class="shop-card">
+                    <div class="shop-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80" alt="Tenda">
+                    </div>
+                    <div class="shop-card-body">
+                        <h4>Tenda Dome Kap. 4</h4>
+                        <p class="shop-price">Rp 35.000 / hari</p>
+                        <div class="shop-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Tenda Dome Kap. 4', 35000)">
+                                <i class="fa-solid fa-cart-plus"></i> Sewa Alat
+                            </button>
+                            <a href="https://shopee.co.id" target="_blank" rel="noopener noreferrer" class="btn-shopee">
+                                <i class="fa-solid fa-bag-shopping"></i> Beli di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="shop-card">
+                    <div class="shop-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="Carrier">
+                    </div>
+                    <div class="shop-card-body">
+                        <h4>Carrier 60L + Raincover</h4>
+                        <p class="shop-price">Rp 25.000 / hari</p>
+                        <div class="shop-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Carrier 60L', 25000)">
+                                <i class="fa-solid fa-cart-plus"></i> Sewa Alat
+                            </button>
+                            <a href="https://shopee.co.id" target="_blank" rel="noopener noreferrer" class="btn-shopee">
+                                <i class="fa-solid fa-bag-shopping"></i> Beli di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="shop-card">
+                    <div class="shop-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80" alt="Kompor">
+                    </div>
+                    <div class="shop-card-body">
+                        <h4>Kompor Lapangan</h4>
+                        <p class="shop-price">Rp 10.000 / hari</p>
+                        <div class="shop-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Kompor Lapangan', 10000)">
+                                <i class="fa-solid fa-cart-plus"></i> Sewa Alat
+                            </button>
+                            <a href="https://shopee.co.id" target="_blank" rel="noopener noreferrer" class="btn-shopee">
+                                <i class="fa-solid fa-bag-shopping"></i> Beli di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="shop-card">
+                    <div class="shop-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="SB">
+                    </div>
+                    <div class="shop-card-body">
+                        <h4>Sleeping Bag Thermal</h4>
+                        <p class="shop-price">Rp 8.000 / hari</p>
+                        <div class="shop-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Sleeping Bag Thermal', 8000)">
+                                <i class="fa-solid fa-cart-plus"></i> Sewa Alat
+                            </button>
+                            <a href="https://shopee.co.id" target="_blank" rel="noopener noreferrer" class="btn-shopee">
+                                <i class="fa-solid fa-bag-shopping"></i> Beli di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keranjang Sewa -->
+            <div class="cart-summary">
+                <h3><i class="fa-solid fa-basket-shopping"></i> Ringkasan Sewa Peralatan</h3>
+                <ul id="cartList">
+                    <li style="color: rgba(255,255,255,0.5);">Keranjang sewa Anda masih kosong.</li>
+                </ul>
+                <div class="cart-total-box">
+                    <span>Total Estimasi:</span>
+                    <span id="cartTotal" style="color: var(--accent);">Rp 0</span>
+                </div>
+                <button class="btn-gold" style="width: 100%; margin-top: 20px; justify-content: center;" onclick="checkoutWA()">
+                    <i class="fa-brands fa-whatsapp"></i> Konfirmasi Sewa via WhatsApp
+                </button>
+            </div>
+        </section>
+
+        <!-- PENERIMAAN ANGGOTA BARU -->
+        <section id="pab" style="margin-top: 100px;">
+            <div class="section-header">
+                <span class="section-subtitle">Rekrutmen</span>
+                <h2 class="section-title">Penerimaan Anggota Baru (PAB)</h2>
+            </div>
+            
+            <div class="pab-container">
+                <div class="pab-info">
+                    <h3>Open Recruitment Angkatan IV!</h3>
+                    <p>Persiapkan dirimu untuk menjadi bagian dari keluarga besar MAPALA PASCAL UPU dan jelajahi keindahan alam Nusantara.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Mahasiswa aktif UPU (Maksimal Semester 4)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Sehat jasmani &amp; rohani</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Siap mengikuti DIKSAR Lapangan</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Memiliki komitmen &amp; loyalitas tinggi</li>
+                    </ul>
+                </div>
+
+                <div class="form-container">
+                    <form id="formPendaftaran">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" required placeholder="Contoh: Budi Pratama">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nim">NIM</label>
+                            <input type="text" id="nim" required placeholder="Masukkan NIM aktif">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodi">Program Studi / Fakultas</label>
+                            <input type="text" id="prodi" required placeholder="Contoh: Informatika / FTTI">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester" required>
+                                <option value="">-- Pilih Semester --</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hp">No. WhatsApp / HP</label>
+                            <input type="tel" id="hp" required placeholder="081234567890">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alasan">Motivasi Bergabung</label>
+                            <textarea id="alasan" rows="3" required placeholder="Tuliskan alasan singkat..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Kirim Form Pendaftaran</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 MAPALA PASCAL UPU - Universitas Potensi Utama. Salam Lestari!</p>
+    </footer>
+
+    <!-- JAVASCRIPT MODULE -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

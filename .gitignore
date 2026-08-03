@@ -1,0 +1,15 @@
+# Logs & Caches
+*.log
+.DS_Store
+Thumbs.db
+
+# Node dependencies (jika di kemudian hari menambahkan npm)
+node_modules/
+npm-debug.log*
+
+# Netlify build directory
+.netlify/
+
+# Environment / Secret Keys
+.env
+.env.local
